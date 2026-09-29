@@ -1,7 +1,7 @@
 // ===================================================================
 // 1) 幫離職同事改名字：改這裡就好，標題會自動套用
 // ===================================================================
-const COLLEAGUE_NAME = "小美"; // 例如 "小美"，會顯示成「給小美的留言牆」
+const COLLEAGUE_NAME = "민지"; // 例如 "민지"，會顯示成「민지님을 위한 롤링페이퍼」（因為同事是韓國人，網頁畫面文字都改成韓文了，這裡也請填韓文名字）
 
 // ===================================================================
 // 2) 貼上 Firebase 主控台給你的設定物件（在「新增網頁應用程式」那步拿到）
@@ -37,13 +37,13 @@ import {
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// 把同事的名字套進標題、副標與各區塊小標
-document.getElementById("page-title").textContent = `給${COLLEAGUE_NAME}的留言牆`;
-document.getElementById("hero-title").textContent = `給${COLLEAGUE_NAME}的留言牆`;
+// 把同事的名字套進標題、副標與各區塊小標（畫面文字是韓文，因為離職同事是韓國人）
+document.getElementById("page-title").textContent = `${COLLEAGUE_NAME}님을 위한 롤링페이퍼`;
+document.getElementById("hero-title").textContent = `${COLLEAGUE_NAME}님을 위한 롤링페이퍼`;
 document.getElementById("hero-subtitle").textContent =
-  `這段時間辛苦你了。這裡集滿了大家想對${COLLEAGUE_NAME}說的話——謝謝、祝福，還有滿滿的不捨，都在下一段旅程開始前，好好收下。`;
-document.getElementById("wall-heading").textContent = `大家想對${COLLEAGUE_NAME}說的話 💌`;
-document.getElementById("form-heading").textContent = `留下你想對${COLLEAGUE_NAME}說的話 ✍️`;
+  `그동안 고생 많으셨어요. 모두가 ${COLLEAGUE_NAME}님께 전하고 싶은 이야기들을 이곳에 담았습니다 — 감사와 응원, 그리고 진한 아쉬움까지, 새로운 여정을 시작하기 전에 마음 편히 받아주세요.`;
+document.getElementById("wall-heading").textContent = `모두가 ${COLLEAGUE_NAME}님께 전하고 싶은 말 💌`;
+document.getElementById("form-heading").textContent = `${COLLEAGUE_NAME}님께 하고 싶은 말을 남겨주세요 ✍️`;
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -78,12 +78,12 @@ form.addEventListener("submit", async (event) => {
   const message = messageInput.value.trim();
 
   if (!name || !message) {
-    showError("請填寫姓名與留言內容");
+    showError("이름과 메시지를 모두 입력해주세요");
     return;
   }
 
   submitBtn.disabled = true;
-  submitBtn.textContent = "祝福送出中…";
+  submitBtn.textContent = "보내는 중…";
 
   try {
     await addDoc(messagesRef, {
@@ -95,16 +95,16 @@ form.addEventListener("submit", async (event) => {
     nameInput.focus();
   } catch (err) {
     console.error(err);
-    showError("送出失敗，請確認網路連線或稍後再試一次");
+    showError("전송에 실패했습니다. 네트워크 연결을 확인하거나 잠시 후 다시 시도해주세요");
   } finally {
     submitBtn.disabled = false;
-    submitBtn.textContent = "送出祝福 🎁";
+    submitBtn.textContent = "응원 보내기 🎁";
   }
 });
 
 function formatTime(timestamp) {
-  if (!timestamp) return "剛剛";
-  return timestamp.toDate().toLocaleString("zh-TW", {
+  if (!timestamp) return "방금 전";
+  return timestamp.toDate().toLocaleString("ko-KR", {
     month: "numeric",
     day: "numeric",
     hour: "2-digit",
@@ -116,11 +116,11 @@ function renderMessages(snapshot) {
   wallEl.innerHTML = "";
 
   if (snapshot.empty) {
-    wallStatusEl.textContent = "目前還沒有留言，成為第一個留言的人吧！";
+    wallStatusEl.textContent = "아직 메시지가 없어요. 첫 번째 메시지를 남겨보세요!";
     return;
   }
 
-  wallStatusEl.textContent = `目前共有 ${snapshot.size} 則留言`;
+  wallStatusEl.textContent = `현재 총 ${snapshot.size}개의 메시지가 있습니다`;
 
   let index = 0;
   snapshot.forEach((doc) => {
@@ -159,7 +159,7 @@ onSnapshot(
   (snapshot) => renderMessages(snapshot),
   (err) => {
     console.error(err);
-    wallStatusEl.textContent = "留言載入失敗，請確認 firebaseConfig 是否已填寫正確";
+    wallStatusEl.textContent = "메시지를 불러오지 못했습니다. firebaseConfig가 올바르게 입력되었는지 확인해주세요";
   }
 );
 
@@ -170,9 +170,9 @@ if (MESSAGES_CLOSED) {
   const noteFormSection = document.querySelector(".note-form");
   if (noteFormSection) {
     noteFormSection.innerHTML = `
-      <h2 class="note-form__title">留言時間已經結束 🙏</h2>
+      <h2 class="note-form__title">메시지 작성 시간이 종료되었습니다 🙏</h2>
       <p class="note-form__closed-text">
-        謝謝大家這段時間留下的祝福與回憶，留言蒐集已經停止了，不過上面的留言牆會繼續保留給${COLLEAGUE_NAME}慢慢回味。
+        그동안 남겨주신 축하와 추억에 감사드립니다. 메시지 작성은 종료되었지만, 위의 롤링페이퍼는 ${COLLEAGUE_NAME}님을 위해 계속 남아있을 거예요.
       </p>
     `;
   }

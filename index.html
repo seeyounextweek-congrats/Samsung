@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="page-title">留言牆</title>
+  <title id="page-title">롤링페이퍼</title>
 
-  <!-- 分享到 LINE／Messenger 等通訊軟體時顯示的預覽標題、說明文字、縮圖。
-       這段是固定內容，不會跟著 script.js 裡改的名字自動變，
-       記得把下面這 8 行裡的「小美」和網址換成你實際的同事名字、網址，
+  <!-- 分享到 LINE／Messenger 等通訊軟體時顯示的預覽標題、說明文字、縮圖（這裡故意保留中文註解方便你自己維護）。
+       網頁畫面本身已經全部改成韓文（因為離職同事是韓國人），但這幾行 meta 標籤是固定內容，
+       不會跟著 script.js 裡改的名字自動變，記得把下面這 8 行裡的「민지」和網址換成你實際的同事名字、網址，
        圖片可以換成 photo.jpg、team.jpg、memory1.jpg 或 memory2.jpg -->
-  <meta name="description" content="這段時間辛苦你了！大家想對小美說的話都在這裡，一起留下你的祝福吧 💌" />
+  <meta name="description" content="그동안 수고 많으셨어요! 모두가 민지님께 전하고 싶은 말이 이곳에 담겨 있어요. 함께 응원의 메시지를 남겨주세요 💌" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="給小美的留言牆" />
-  <meta property="og:description" content="這段時間辛苦你了！大家想對小美說的話都在這裡，一起留下你的祝福吧 💌" />
-  <meta property="og:image" content="https://seeyounextweek-congrats.github.io/Samsung/team.jpg" />
-  <meta property="og:url" content="https://seeyounextweek-congrats.github.io/Samsung/" />
+  <meta property="og:title" content="민지님을 위한 롤링페이퍼" />
+  <meta property="og:description" content="그동안 수고 많으셨어요! 모두가 민지님께 전하고 싶은 말이 이곳에 담겨 있어요. 함께 응원의 메시지를 남겨주세요 💌" />
+  <meta property="og:image" content="https://你的帳號.github.io/repo名稱/team.jpg" />
+  <meta property="og:url" content="https://你的帳號.github.io/repo名稱/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="給小美的留言牆" />
-  <meta name="twitter:description" content="這段時間辛苦你了！大家想對小美說的話都在這裡，一起留下你的祝福吧 💌" />
+  <meta name="twitter:title" content="민지님을 위한 롤링페이퍼" />
+  <meta name="twitter:description" content="그동안 수고 많으셨어요! 모두가 민지님께 전하고 싶은 말이 이곳에 담겨 있어요. 함께 응원의 메시지를 남겨주세요 💌" />
   <meta name="twitter:image" content="https://你的帳號.github.io/repo名稱/team.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="style.css" />
@@ -49,10 +49,10 @@
       <span class="hero__photo-badge">🌼</span>
     </div>
 
-    <p class="hero__eyebrow">感謝相伴，祝福啟程</p>
-    <h1 class="hero__title" id="hero-title">同事的留言牆</h1>
+    <p class="hero__eyebrow">함께한 시간에 감사하며, 응원을 보냅니다</p>
+    <h1 class="hero__title" id="hero-title">동료의 롤링페이퍼</h1>
     <p class="hero__subtitle" id="hero-subtitle">
-      這段時間辛苦你了。這裡集滿了大家想對你說的話——謝謝、祝福，還有滿滿的不捨，都在下一段旅程開始前，好好收下。
+      그동안 고생 많으셨어요. 모두가 전하고 싶은 이야기들을 이곳에 담았습니다 — 감사와 응원, 그리고 진한 아쉬움까지, 새로운 여정을 시작하기 전에 마음 편히 받아주세요.
     </p>
 
     <svg class="hero__wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
@@ -73,14 +73,14 @@
         />
         <div class="banner__fallback" id="team-photo-fallback" aria-hidden="true">
           <span>📷</span>
-          <p>把 team.jpg 放進資料夾，這裡就會換成全體合照</p>
+          <p>단체 사진이 곧 이곳에 올라올 예정이에요</p>
         </div>
       </div>
-      <p class="banner__caption" id="banner-caption">那些一起打拚的日子 📅</p>
+      <p class="banner__caption" id="banner-caption">함께 열심히 달려온 날들 📅</p>
     </section>
 
     <section class="memories" aria-labelledby="memories-heading">
-      <h2 id="memories-heading" class="memories__title">珍藏的畫面 📸</h2>
+      <h2 id="memories-heading" class="memories__title">소중한 추억들 📸</h2>
       <div class="memories__grid">
         <div class="memories__item">
           <div class="memories__frame">
@@ -93,7 +93,7 @@
             />
             <div class="memories__fallback" id="memory-photo-1-fallback" aria-hidden="true">🌼</div>
           </div>
-          <p class="memories__caption">那個下午的野餐時光 🧺</p>
+          <p class="memories__caption">그날 오후의 피크닉 🧺</p>
         </div>
         <div class="memories__item">
           <div class="memories__frame">
@@ -106,7 +106,7 @@
             />
             <div class="memories__fallback" id="memory-photo-2-fallback" aria-hidden="true">🦋</div>
           </div>
-          <p class="memories__caption">一起笑到肚子痛的日子 🌸</p>
+          <p class="memories__caption">배꼽 잡고 웃었던 날들 🌸</p>
         </div>
       </div>
     </section>
@@ -118,42 +118,42 @@
         <span class="deco" style="left:-56px; bottom:14%;">🍀</span>
         <span class="deco" style="right:-56px; bottom:6%;">🌼</span>
       </div>
-      <h2 id="wall-heading" class="wall__title">大家想對你說的話 💌</h2>
-      <p id="wall-status" class="wall__status">正在載入留言…</p>
+      <h2 id="wall-heading" class="wall__title">모두가 당신께 전하고 싶은 말 💌</h2>
+      <p id="wall-status" class="wall__status">메시지를 불러오는 중…</p>
       <div id="messages" class="wall__grid"></div>
     </section>
 
     <section class="note-form" aria-labelledby="form-heading">
-      <h2 id="form-heading" class="note-form__title">留下你想說的話 ✍️</h2>
+      <h2 id="form-heading" class="note-form__title">하고 싶은 말을 남겨주세요 ✍️</h2>
 
       <form id="message-form" novalidate>
         <div class="field">
-          <label for="name">你的名字</label>
+          <label for="name">이름</label>
           <input
             type="text"
             id="name"
             name="name"
             maxlength="20"
-            placeholder="例如：安全組 阿爆"
+            placeholder="예: 마케팅팀 지훈"
             required
           />
         </div>
 
         <div class="field">
-          <label for="message">留言內容</label>
+          <label for="message">메시지 내용</label>
           <textarea
             id="message"
             name="message"
             rows="4"
             maxlength="300"
-            placeholder="想說什麼都可以，感謝、祝福、回憶都行"
+            placeholder="하고 싶은 말은 무엇이든 좋아요. 감사 인사, 응원, 추억 모두 괜찮아요"
             required
           ></textarea>
         </div>
 
         <p id="form-error" class="form-error" role="alert" hidden></p>
 
-        <button type="submit" id="submit-btn">送出祝福 🎁</button>
+        <button type="submit" id="submit-btn">응원 보내기 🎁</button>
       </form>
     </section>
 
@@ -168,12 +168,12 @@
         />
         <div class="closing-photo__fallback" id="closing-photo-fallback" aria-hidden="true">🌻</div>
       </div>
-      <p class="closing-photo__caption" id="closing-photo-caption">帶著滿滿祝福，向下一段旅程出發 🌻</p>
+      <p class="closing-photo__caption" id="closing-photo-caption">가득한 응원을 안고, 다음 여정을 향해 🌻</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>🌱 響應環保、少浪費一張卡片紙 ——— 把感謝跟不捨都留在這裡。 👋</p>
+    <p>🌱 환경을 생각해 종이 카드 대신—사실은 다들 너무 바빠서, 감사와 아쉬움을 이렇게 온라인으로 전하게 되었어요. 시간 내어 이 메시지를 남겨주셔서 감사합니다 👋</p>
   </footer>
 
   <script type="module" src="script.js"></script>
