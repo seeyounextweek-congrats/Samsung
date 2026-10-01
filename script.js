@@ -1,7 +1,9 @@
 // ===================================================================
-// 1) 幫離職同事改名字：改這裡就好，標題會自動套用
+// 1) 同事的韓文名字（現在只用在「留言時間已結束」那段提示文字，
+//    其他標題、問候語都已經是你自己手動寫好的中韓雙語固定文字了，
+//    改這裡不會再自動套用到上面那些地方，要改標題文字請直接改 index.html）
 // ===================================================================
-const COLLEAGUE_NAME = "천명선"; // 例如 "민지"，會顯示成「민지님을 위한 롤링페이퍼」（因為同事是韓國人，網頁畫面文字都改成韓文了，這裡也請填韓文名字）
+const COLLEAGUE_NAME = "천프로";
 
 // ===================================================================
 // 2) 貼上 Firebase 主控台給你的設定物件（在「新增網頁應用程式」那步拿到）
@@ -37,13 +39,10 @@ import {
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// 把同事的名字套進標題、副標與各區塊小標（畫面文字是韓文，因為離職同事是韓國人）
-document.getElementById("page-title").textContent = `${COLLEAGUE_NAME}님을 위한 롤링페이퍼`;
-document.getElementById("hero-title").textContent = `${COLLEAGUE_NAME}님을 위한 롤링페이퍼`;
-document.getElementById("hero-subtitle").textContent =
-  `그동안 고생 많으셨어요. 모두가 ${COLLEAGUE_NAME}님께 전하고 싶은 이야기들을 이곳에 담았습니다 — 감사와 응원, 그리고 진한 아쉬움까지, 새로운 여정을 시작하기 전에 마음 편히 받아주세요.`;
-document.getElementById("wall-heading").textContent = `모두가 ${COLLEAGUE_NAME}님께 전하고 싶은 말 💌`;
-document.getElementById("form-heading").textContent = `${COLLEAGUE_NAME}님께 하고 싶은 말을 남겨주세요 ✍️`;
+// 注意：標題、問候語、留言牆小標、表單小標現在都是中韓雙語固定文字，
+// 直接寫在 index.html 裡（用 <span class="lang-zh"> 包住中文那行），
+// 不再由這裡的程式自動套用名字，所以這裡拿掉了原本的 textContent 設定，
+// 避免把你在 index.html 手動排好的雙語版面覆蓋掉。
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

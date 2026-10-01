@@ -12,6 +12,7 @@
 
   --font-display: "Noto Serif KR", "Georgia", serif;
   --font-body: "Noto Sans KR", "Helvetica Neue", sans-serif;
+  --font-zh: "Noto Sans TC", "Noto Sans KR", "Helvetica Neue", sans-serif;
 }
 
 * {
@@ -144,6 +145,17 @@ body {
   fill: var(--color-paper);
 }
 
+/* ---------- 中文翻譯（主要語言是韓文，中文放在下面一行當作翻譯） ---------- */
+
+.lang-zh {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-zh);
+  font-size: 0.82em;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
 /* ---------- Layout ---------- */
 
 .page {
@@ -219,6 +231,14 @@ body {
   font-weight: 500;
   color: var(--color-teal);
   text-align: center;
+}
+
+.memories__intro {
+  max-width: 480px;
+  margin: 0 auto 24px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-muted);
 }
 
 .memories__grid {
