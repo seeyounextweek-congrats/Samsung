@@ -23,7 +23,7 @@ const firebaseConfig = {
 //    改完這裡之後，記得也要到 Firebase 主控台把 Firestore 規則裡的
 //    allow create 改成 if false（詳見 README 最後一步），兩個都做才算真的關閉
 // ===================================================================
-const MESSAGES_CLOSED = false;
+const MESSAGES_CLOSED = true;
 
 // ===================================================================
 // 以下不用改，是留言板的運作邏輯
